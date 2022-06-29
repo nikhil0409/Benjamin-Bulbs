@@ -1,0 +1,44 @@
+package com.studyopedia;
+
+import java.util.*;
+
+public class BenjaminBulbs {
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int logic=0;
+        if (n ==1)
+        {
+            System.out.print("1");
+        }
+        else {
+            for (int j = 1; j <= n; j++)
+            //bulb
+            {
+                for (int i = 1; i <=j; i++)
+                //fluctuation
+                {
+                    if (j%i == 0)
+                    // only nth bulb is toggled
+                    {
+                        if (logic == 0)
+                        {
+                            logic = 1;
+                        }
+                        else
+                        {
+                            logic = 0;
+                        }
+                    }
+                }
+                if(logic==1)
+                {
+                    System.out.println(j);
+                    // on at last
+                }
+                logic=0;
+            }
+        }
+    }
+}
